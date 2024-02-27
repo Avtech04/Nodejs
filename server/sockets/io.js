@@ -1,12 +1,12 @@
 
 module.exports = io => {
     io.on('connection', socket => {
-        console.log('New socket connection');
+        console.log('New socket');
 
         let currentCode = null;
 
         socket.on('move', function(move) {
-            console.log('move detected')
+            console.log('move done')
 
             io.to(currentCode).emit('newMove', move);
         });
